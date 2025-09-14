@@ -1,0 +1,49 @@
+In this area of machine learning, we try to understand certain relations beween input-output data. If such relations are established, we then wish to generalize for new \textit{unseen} data.
+Things start getting even jucier whenever we wish to take decisions based on new data, resulting in a more generalized task. In this section we explore the formalization provided by Prof. Obozinski.
+
+\begin{enumerate}
+    \item \textbf{We have:}
+    \begin{itemize}
+        \item Data: $\mathcal{D}_n := \left\{ (x_0,y_0), \ldots, (x_n,y_n) \right\}$
+        \item i.e. tuples of the form $(x_i, y_i)$
+        \item $x_i:=$ input; $y_i:=$ output
+    \end{itemize}
+
+    \item \textbf{We want:}
+    \begin{itemize}
+        \item Given $\mathcal{D}_n$, learn relations of the $x_i$'s with the corresponding $y_i$'s such that we may infer something about a new unseen $y'$ given $x'$.
+    \end{itemize}
+\end{enumerate}
+
+We now define the two types of tasks cosidered inside supervised learning (amongst others).
+
+\begin{definition}
+    A \textit{prediction} task is established to be the discovery of $y`$ (unseen) given $x`$. A \textit{decision} task on the
+    other hand, focuses on producing a decision based on $(x`,y`)$ only with the data of $x`$
+\end{definition}
+
+For example, take into consideration a medical diagnosis. We have $x_i :=$ patient data i.g. $\left\{ \text{weight}_i, \text{height}_i, \ldots \right\}$; $y_i := \left\{ \text{positive}, \text{negative} \right\}$. Then, a \textbf{prediction task} 
+would consist in predicting $y`$ given $x`$. A \textbf{decision task} on the other hand, would then consist on choosing how to treat patient $x`$ i.g. choosing medicine $m \in \left\{ A,B,C \right\}$ (we have to decide on $y`$ by only seeing $x`$).
+
+\vspace{0.3cm}
+
+We now consider the space of all possible decisions; a \textit{learning algorithm }(sometimes called \textit{learning scheme}) $\mathcal{A}$. 
+
+\begin{definition}
+    We define a learning algorithm as $$\mathcal{A}: \mathcal{D}_n \rightarrow \hat{f}$$ where $\hat{f}$ is our decision function.
+\end{definition}
+
+Obviously we want $\hat{f}$ to be ``good'' (otherwise, \textit{nos estamos haciendo pendejos}). Hence, we must define what it means for $\hat{f}$ to be ``good'' i.e. what we want from $\hat{f}$. 
+
+\begin{definition}
+    Let $\mathcal{X}$ be the input space, then, a decision function is defined as $$f:\mathcal{X} \rightarrow \mathcal{A}^{\mathcal{X}}$$ Note that the input space $\mathcal{X}$ is the space of all $x_i$`s.
+\end{definition}
+
+Ideally, as stated before, we want a ``good'' function (i.e. decision function) $f$ such that $f(x) \in \mathcal{A}^{\mathcal{X}}$ is ``good'' when compared to an unseen $y$. This means that $f(x)$ must be an accurate prediction of $y$ and it has
+the \textbf{smallest possible cost} whenever $y$ occurrs. So, we compute the \textit{loss function} $l$.
+
+\begin{definition}
+    Let $\mathcal{Y}$ be the space of all possible outcomes, then $$l:\mathcal{A}^{\mathcal{X}} \times \mathcal{Y} \rightarrow \mathbb{R}$$ defined by $(f(x)=a,y) \mapsto l(a,y)$. Note that this function meassures the cost of taking decision $f$ whenever $y$ occurrs i.e. the \textbf{risk}.
+\end{definition}
+
+\cite{judson2019abstract}
