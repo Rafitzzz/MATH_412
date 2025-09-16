@@ -49,7 +49,7 @@ ax.yaxis.set_ticks_position('left')
 ax.tick_params(axis='x', labelsize=10)
 ax.tick_params(axis='y', labelsize=10)
 
-#plt.show()
+plt.show()
 
 
 # ---- POLYNOMIAL REGRESSION EXERCISE ----
@@ -88,3 +88,5 @@ fitted_values_test = x_test_intercept_test @ beta_hat
 risk_test =  (1/len(y_test)) * np.sum((y_test - fitted_values_test) ** 2)
 
 print(risk_test<risk_train)
+
+# Add x^2 into our feature matrix
