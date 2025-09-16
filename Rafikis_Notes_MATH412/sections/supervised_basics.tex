@@ -1,5 +1,5 @@
 In this area of machine learning, we try to understand certain relations beween input-output data. If such relations are established, we then wish to generalize for new \textit{unseen} data.
-Things start getting even jucier whenever we wish to take decisions based on new data, resulting in a more generalized task. In this section we explore the formalization provided by Prof. Obozinski.
+Things start getting even jucier whenever we wish to take decisions based on new data, resulting in a more generalized task. In this section we explore the formalization provided by Prof. Zemel.
 
 \begin{enumerate}
     \item \textbf{We have:}
@@ -52,7 +52,7 @@ the \textbf{smallest possible cost} whenever $y$ occurrs. So, we compute the \te
     done so i.i.d. as random variables i.e. $(X_i, Y_i)$.
 \end{remark}
 
-Because of the fact that this is a statistics class, we'll start getting into the \textit{deets} using much more of their language (statisticians have a fetish for fancy language and syntax). Hence we would like to define what the \textit{expected cost} of takin decision $f$ as the risk $\mathcal{R}$.
+Because of the fact that this is a statistics class, we'll start getting into the \textit{deets} using much more of their language (statisticians have a fetish for fancy language and syntax). Hence we would like to define what the \textit{expected cost} of taking decision $f$ as the risk $\mathcal{R}$.
 
 \begin{definition}
     We define the risk as follows $$\mathcal{R}(f) \text{ :}= \mathbb{E}\big[l(a,Y) \big] \text{. If  } \exists f^* \in \mathcal{A}^{\mathcal{X}} : \mathcal{R}(f^*)=\text{ inf}_{f \in \mathcal{A}^{\mathcal{X}}} \mathcal{R}(f)$$ then, that $f^*$ is our juicy function we're looking for! statisticians call it the
@@ -71,4 +71,49 @@ We finally make the last definition of the section, since we're interested in me
     The excess risk is given by $$\varepsilon (f) := \mathcal{R}(f) - \mathcal{R}(f^*) = \mathbb{E} \big[l(f(X),Y)\big] - \mathbb{E} \big[l(f^*(X),Y)\big]$$ $$\Rightarrow \varepsilon (f) = \mathbb{E} \big[l(f(X),Y) - l(f^*(X),Y)\big]$$
 \end{definition}
 
-This is a great book!\cite{judson2019abstract}.
+\subsection{Examples}
+As for every new concept, one must get their hands dirty in order to fully grasp the idea that is being transmitted. We explore some basic examples as to how these things might be used in practice by taking a look at two main cases: \textit{Ordinary Least Squares} and \textit{Classification}. Our main goal is
+to derived the target function $f^*$ given a loss function $l$.
+
+\subsubsection{Ordinary Least Squirts Regression (OLS)}
+Consider the case where both our action space $\mathcal{A}^{\mathcal{X}}$ and our output space $\mathcal{Y}$ are both the real numbers $\mathbb{R}$. The loss function in this case is then defined as $l:\mathbb{R}^2 \rightarrow \mathbb{R}$ and it is given by $l(f(x)=a,y)=(a-y)^2$. Then, the expected cost of taking decision $f$
+is the following $$\mathcal{R}(f) = \mathbb{E}\big[l(a,y)\big] = \mathbb{E}\big[(a-y)^2\big] = \mathbb{E}\big[(y-a)^2\big]$$ 
+
+We now make an educated guess (cheeky little trick) and assume that $\hat{f} = \mathbb{E}\big[Y|X\big]$ and so, we consider the following expected conditional risk:
+$$\mathcal{R}(f(X)|X) = \mathbb{E}\big[l(a,y)|X\big] = \mathbb{E}\big[(Y-f(X))^2|X\big] = \mathbb{E}\big[(Y-\hat{f}(X)+\hat{f}(X)-f(X))^2|X\big]$$ 
+
+Note that we also implemented a cheeky trick, it's just adding a glorified zero into the mix i.e. $-\hat{f}(X)+f^*(X) = 0$. Expanding the quadratic term inside the expectation, we obtain the following equation:
+$$\mathbb{E}\big[(Y-\hat{f}(X))^2 + 2\big(Y-\hat{f}(X)\big)\big(\hat{f}(X)-f(X)\big) + (\hat{f}(X)-f(X))^2 | X\big]$$
+$$= \mathbb{E}\big[(Y-\hat{f}(X))^2 | X\big] + \mathbb{E}\big[2\big(Y-\hat{f}(X)\big)\big(\hat{f}(X)-f(X)\big) | X\big] + \mathbb{E}\big[(F^*(X)-F(X))^2 | X\big]$$
+$$= \mathbb{E}\big[(Y-\hat{f}(X))^2 | X\big] + 2\big(\hat{f}(X)-f(X)\big) \mathbb{E}\big[Y-\hat{f}(X) | X\big] + \mathbb{E}\big[(\hat{f}(X)-f(X))^2 | X\big]$$
+
+\begin{remark}
+    Note that $2\big(\hat{f}(X)-f(X)\big) \mathbb{E}\big[Y-\hat{f}(X) | X\big] = 0$ since $$\mathbb{E}\big[Y-\hat{f}(X) | X\big]=\mathbb{E}\big[Y-\mathbb{E}\big[Y|X\big] | X\big] = \mathbb{E}\big[Y|X\big] - \mathbb{E}\big[Y|X\big] = 0$$
+\end{remark}
+
+So, we get that the conditional risk:
+$$\mathcal{R}(f(X)|X) = \mathbb{E}\big[(Y-\hat{f}(X))^2 | X\big] + \mathbb{E}\big[(\hat{f}(X)-f(X))^2 | X\big]$$
+$$\Rightarrow \mathcal{R}(f(X)|X) = \mathcal{R}(\hat{f}(X)|X) + \mathbb{E}\big[(\hat{f}(X)-f(X))^2 | X\big]$$
+
+Now, let's think for a moment. We essentially want to find $f^*$ (target function) such that our risk $\mathcal{R}(f(X)|X)$ is minimized whenever we take that action. 
+
+\vspace{0.2cm}
+
+Since $\mathcal{R}(\hat{f}(X)|X)$ can't help us, we turn our but cheeks to the other term, i.e. $\mathbb{E}\big[(\hat{f}(X)-f(X))^2 | X\big]$. Note that if $f=\hat{f}$, this term goes to zero, and hence our conditional risk is minimized. Voila! since there actually exists such function that minimizes our risk, we've arrived at our sensual (target) function babyyy.
+
+$$ \therefore \text{ }f^*=\hat{f} $$
+
+\subsubsection{Classification}
+We now consider a classification problem where $\mathcal{A}^{\mathcal{X}} = \mathcal{Y} := \{0, \ldots, K-1\}$ and the loss function is given by the 0-1 loss function i.e. $l(a,y)=\mathbbm{1}_{\{a\neq y\}}$. Then, the risk of $f$ is given by the equation
+$$\mathcal{R}(f) = \mathbb{E}\big[l(f(x)=a,y)\big] = \mathbb{P}\big(f(X) \neq Y\big) = 1 - \mathbb{P}\big(f(X) = Y\big)$$
+
+Now, if we consider the conditional risk, we obtain the following derivation
+$$\mathcal{R}(f|X=x) = \mathbb{E}\big[l(f(x)=a,y)|X=x\big] = \mathbb{P}\big(f(x) \neq Y|X=x\big) = 1 - \mathbb{P}\big(f(x) = Y|X=x\big)$$
+
+Think for a moment. This states that in order to minimize $\mathcal{R}(f|X=x)$ we must then find the highest possible value for $\mathbb{P}\big(f(x) = Y|X=x\big) = \mathbb{P}\big(Y = f(x)|X=x\big)$. So, the following equivalence holds
+$$\text{min}\mathcal{R}(f|X=x) = \text{max}_{f\in \mathcal{A}^{\mathcal{X}}}\mathbb{P}\big(Y = f(x)|X=x\big)$$
+$$\Rightarrow \text{arg max}_{k\in K}\mathbb{P}\big(Y = k|X=x\big) = f^*$$
+
+And so, we've found our hard-to-get (like women playing their games) target function. That last implication basically states that we must do the following: \textit{for each value of x, pick y that makes it the largest possible value}.
+
+This is a great book!\cite{judson2019abstract}

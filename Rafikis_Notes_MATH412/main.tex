@@ -13,6 +13,8 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{tcolorbox}
 \usepackage{mathrsfs}
+\usepackage{bbm}
+\usepackage{dsfont} % For the indicator function \mathds{1}
 
 \colorlet{LightGray}{White!90!Periwinkle}
 \colorlet{LightOrange}{Orange!15}
@@ -58,13 +60,13 @@
 \title{ \normalsize \textsc{}
 		\\ [2.0cm]
 		\HRule{1.5pt} \\
-		\LARGE \textbf{\uppercase{MATH 412 Basics}
+		\LARGE \textbf{\uppercase{MATH 412: Statistical Machine Learning}
 		\HRule{2.0pt} \\ [0.6cm] \LARGE{Rafiki's Notes} \vspace*{10\baselineskip}}
 		}
 \date{}
 \author{\textbf{Rafael Barroso} \\ 
-		Ing. Mathematique \\
-		EPFL \\
+		Ingenierie Mathematique \\
+		École Polytechnique Fédérale de Lausanne \\
 		\today}
 
 \maketitle
@@ -79,6 +81,14 @@
 \input{sections/supervised_basics.tex}
 
 \newpage
+
+\section*{Exercise Sheet 1} \label{sec:ex01}
+\input{sections/ex01.tex}
+
+\newpage
+
+\section{Linear Regression} \label{sec:linreg}
+\input{sections/linregression.tex}	
 
 
 % ------------------------------------------------------------------------------

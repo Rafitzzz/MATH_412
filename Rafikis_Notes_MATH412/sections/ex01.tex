@@ -1,0 +1,168 @@
+The following exercises are designed to reinforce the concepts introduced in this section. They provide both practice with fundamental techniques and opportunities to explore some extensions of the main results. Complete solutions are included to aid understanding and self-study.
+
+\subsection*{Exercise 1.1: Classification from a discrete input space}
+
+We consider a multiclass classification problem with 3 classes 
+\(\mathcal{Y} = \{1,2,3\}\) for data with only a single discrete descriptor 
+in \(\mathcal{X} = \{1,2,3,4\}\).
+
+We assume that the joint probability distribution 
+\(\mathbb{P}(Y = y, X = x)\), with \(X \in \mathcal{X}\) and \(Y \in \mathcal{Y}\), 
+is specified by the following table:
+
+\[
+\begin{array}{c|ccc}
+    & Y=1 & Y=2 & Y=3 \\ \hline
+X=1 & 0.02 & 0.08 & 0.10 \\
+X=2 & 0.05 & 0.40 & 0.15 \\
+X=3 & 0.02 & 0.02 & 0.12 \\
+X=4 & 0.02 & 0.01 & 0.01 \\
+\end{array}
+\]
+
+\begin{enumerate}
+    \item What is the target function \(f^*\) for the 0--1 loss?
+    \item What are the values of \(f^*(x)\) for \(x = 1,2,3,4\)?
+    \item What is the value of the risk for the target function?
+\end{enumerate}
+
+\textbf{Answers:}
+\vspace{0.2cm}
+
+As shown above, $f^*(x) = \arg\max_{y \in \mathcal{Y}} \mathbb{P}(Y=y | X=x)$.
+
+\vspace{0.2cm}
+
+Now, if $\mathcal{X} = \{1, 2, 3, 4\}$ and $\mathcal{Y} = \{1, 2, 3\}$, where $\mathbb{P}(Y=y | X=x)$ is given by a table, we find $f^**(x)$ for $x \in \mathcal{X}$. We want to find the $y$ that maximizes $\mathbb{P}(Y=y|X=x)$.
+For example, if $\max_y \mathbb{P}(Y=y|X=1) = 0.1$, which occurs when $y=3$, then $f^*(1)=3$. So, for $x=1, f^*(1)=3$. If $x=2, f^*(2)=2$. For $x=3, f^*(3)=3$. For $x=4, f^*(4)=1$.
+
+\vspace{0.2cm}
+
+Finally, the risk is the probability of misclassification:
+\[ \mathbb{P}(f^*(X) \neq Y) = \mathbb{E}[\mathds{1}_{f^*(X) \neq Y}] = \sum_{x \in \mathcal{X}} \sum_{y \in \mathcal{Y}} \mathds{1}_{f^*(x) \neq y} \mathbb{P}(X=x, Y=y) \]
+
+\subsection*{Exercise 1.2: Recap of linear models}
+
+Let \(y = X\beta + \varepsilon\), where \(\mathbb{E}[\varepsilon] = 0\), 
+\(\mathrm{Var}(\varepsilon) = \sigma^2 I\), 
+and \(X\) is a non-random full rank matrix of size \(n \times p\). 
+This setup contains the Gauss--Markov assumptions of a linear model.
+
+\begin{enumerate}
+    \item Derive the least squares estimator 
+    \(\hat{\beta} = (X^{\top}X)^{-1}X^{\top}y\).
+    \item Show that \(\hat{\beta}\) is unbiased and that the variance of \(\hat{\beta}\) 
+    is given by \(\sigma^2 (X^{\top}X)^{-1}\).
+\end{enumerate}
+
+\newpage
+\textbf{Answers:}
+\vspace{0.2cm}
+
+The model is $y = X\beta + \epsilon$, with assumptions $\mathbb{E}[\epsilon]=0$ and $\text{Var}(\epsilon) = \sigma^2 I$. We assume $X$ is full rank. Note that $X^TX$ is therefore invertible (positive definite).
+Since $\mathbb{E}[\epsilon]=0$, we have $\mathbb{E}[Y|X] = X\beta$.
+
+\vspace{0.2cm}
+
+Now, the loss function is $L(\beta) = \sum_i (y_i - x_i^T\beta)^2 = (y - X\beta)^T(y - X\beta)$.
+\begin{align*}
+    L(\beta) &= (y^T - (X\beta)^T)(y - X\beta) \\
+    &= y^Ty - y^T X\beta - (X\beta)^T y + (X\beta)^T(X\beta) \\
+    &= y^Ty - y^T X\beta - \beta^T X^T y + \beta^T X^T X \beta \\
+    &= y^Ty - 2\beta^T X^T y + \beta^T X^T X \beta
+\end{align*}
+
+\vspace{0.2cm}
+
+To find the minimum, we take the derivative with respect to $\beta$ and set it to 0.
+\[ \frac{\partial L}{\partial \beta} = -2X^T y + 2X^T X \beta \]
+Setting to 0:
+\[ -2X^T y + 2X^T X \beta = 0 \implies X^T X \beta = X^T y \implies \hat{\beta} = (X^T X)^{-1} X^T y \]
+Now, let's find the expectation of the estimator $\hat{\beta}$ to check for bias.
+\begin{align*}
+    \mathbb{E}[\hat{\beta}] &= \mathbb{E}[(X^T X)^{-1} X^T y] \\
+    &= (X^T X)^{-1} X^T \mathbb{E}[y] \\
+    &= (X^T X)^{-1} X^T \mathbb{E}[X\beta + \epsilon] \\
+    &= (X^T X)^{-1} X^T (X\beta + \mathbb{E}[\epsilon]) \\
+    &= (X^T X)^{-1} (X^T X) \beta + 0 \\
+    &= \beta
+\end{align*}
+Therefore, $\mathbb{E}[\hat{\beta}]=\beta$, so the estimator is unbiased. Continuing from Ex 1.2, we find the variance of $\hat{\beta}$.
+\begin{align*}
+    \text{Var}(\hat{\beta}) &= \text{Var}((X^T X)^{-1} X^T y) \\
+    &= \text{Var}((X^T X)^{-1} X^T (X\beta + \epsilon)) \\
+    &= \text{Var}((X^T X)^{-1} X^T X \beta + (X^T X)^{-1} X^T \epsilon) \\
+    &= \text{Var}(\beta + (X^T X)^{-1} X^T \epsilon) \\
+    &= 0 + \text{Var}((X^T X)^{-1} X^T \epsilon) \quad \text{(since } \beta \text{ is a constant)}
+\end{align*}
+Using the rule $\text{Var}(AZ) = A \text{Var}(Z) A^T$:
+\begin{align*}
+    \text{Var}(\hat{\beta}) &= ((X^T X)^{-1} X^T) \text{Var}(\epsilon) ((X^T X)^{-1} X^T)^T \\
+    &= ((X^T X)^{-1} X^T) (\sigma^2 I) (X(X^T X)^{-1}) \\
+    &= \sigma^2 (X^T X)^{-1} X^T X (X^T X)^{-1} \\
+    &= \sigma^2 (X^T X)^{-1} I \\
+    &= \sigma^2 (X^T X)^{-1}
+\end{align*}
+
+\subsection*{Exercise 1.3: Linear regression for binary classification}
+
+Consider a binary classification problem with 
+\(\mathcal{X} = \mathbb{R}^n\) and \(\mathcal{Y} = \mathcal{A} = \{-1, 1\}\). 
+We model the conditional expectation of \(Y\) given \(X\) by the linear model
+\[
+\mathbb{E}[Y \mid X] = X^{\top}\beta.
+\]
+
+Let \(x \in \mathbb{R}^n\) be a new input. So, we estimate
+\[
+\hat{\mathbb{E}}[Y \mid X = x] = x^{\top} \hat{\beta},
+\]
+where \(\hat{\beta}\) is the least-squares estimate of \(\beta\). 
+We wish to estimate its class \(y = f^*{\ast}(x)\), 
+where \(f^*{\ast}\) is the target function corresponding to 0--1 loss.
+
+\begin{enumerate}
+    \item Derive the linear model estimate of 
+    \(\hat{P}(Y = 1 \mid X = x)\).
+    \item Show that 
+    \[
+    \hat{y} = \hat{f}^{\ast}(x) = 2 \cdot \mathbf{1}\{x^{\top} \hat{\beta} \geq 0\} - 1,
+    \]
+    where \(\hat{f}^{\ast}\) is the estimate of \(f^*{\ast}\) given by plugging in 
+    the estimated conditional probabilities 
+    \(\hat{P}(Y = y \mid X = x)\).
+\end{enumerate}
+
+\textbf{Answers:}
+\vspace{0.2cm}
+
+Setup: $\mathcal{X} = \mathbb{R}^n$, $\mathcal{Y} = \{-1, 1\}$. We model the conditional expectation as $E[Y|\mathbf{x}] = \mathbf{x}^T\beta$.
+
+\textbf{(a)} Derive the linear model estimate of $\hat{P}(Y=1|\mathbf{x})$.
+\begin{align*}
+    \mathbb{E}[Y|\mathbf{x}] &= \sum_{y \in \{-1,1\}} y \cdot P(Y=y|\mathbf{x}) \\
+    &= (1)P(Y=1|\mathbf{x}) + (-1)P(Y=-1|\mathbf{x}) \\
+    &= P(Y=1|\mathbf{x}) - P(Y=-1|\mathbf{x})
+\end{align*}
+Since $P(Y=-1|\mathbf{x}) = 1 - P(Y=1|\mathbf{x})$,
+\begin{align*}
+    \mathbb{E}[Y|\mathbf{x}] &= P(Y=1|\mathbf{x}) - (1 - P(Y=1|\mathbf{x})) \\
+    &= 2P(Y=1|\mathbf{x}) - 1
+\end{align*}
+Hence, solving for the probability:
+\[ P(Y=1|\mathbf{x}) = \frac{\mathbb{E}[Y|\mathbf{x}] + 1}{2} \]
+Plugging in our linear model estimate $\hat{\mathbb{E}}[Y|\mathbf{x}] = \mathbf{x}^T\hat{\beta}$:
+\[ \hat{P}(Y=1|\mathbf{x}) = \frac{\mathbf{x}^T\hat{\beta} + 1}{2} \]
+
+\textbf{(b)} Show that $\hat{y} = \hat{f}^*(\mathbf{x})$ is given by $2 \cdot \mathds{1}_{\{\mathbf{x}^T\hat{\beta} \ge 0\}} - 1$.
+We know that the Bayes classifier $\hat{f}^*(\mathbf{x})$ picks the class with the highest estimated probability. Thus, we predict $\hat{y}=1$ if $\hat{P}(Y=1|\mathbf{x}) \ge \hat{P}(Y=-1|\mathbf{x})$.
+\[ \frac{\mathbf{x}^T\hat{\beta} + 1}{2} \ge 1 - \frac{\mathbf{x}^T\hat{\beta} + 1}{2} \]
+\[ \frac{\mathbf{x}^T\hat{\beta} + 1}{2} \ge \frac{1 - \mathbf{x}^T\hat{\beta}}{2} \]
+\[ \mathbf{x}^T\hat{\beta} + 1 \ge 1 - \mathbf{x}^T\hat{\beta} \]
+\[ 2\mathbf{x}^T\hat{\beta} \ge 0 \implies \mathbf{x}^T\hat{\beta} \ge 0 \]
+This tells us that we predict class 1 for positive values of $\mathbf{x}^T\hat{\beta}$ and class -1 for negative values.
+This is indeed given by the function $2 \cdot \mathds{1}_{\{\mathbf{x}^T\hat{\beta} \ge 0\}} - 1$:
+\begin{itemize}
+    \item If $\mathbf{x}^T\hat{\beta} \ge 0$, then $2(1) - 1 = 1$.
+    \item If $\mathbf{x}^T\hat{\beta} < 0$, then $2(0) - 1 = -1$.
+\end{itemize}

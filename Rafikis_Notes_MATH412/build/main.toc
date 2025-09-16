@@ -1,2 +1,6 @@
 \babel@toc {english}{}\relax 
 \contentsline {section}{\numberline {1}Supervised Learning Basics}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Examples}{5}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Ordinary Least Squirts Regression (OLS)}{5}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Classification}{6}{subsubsection.1.1.2}%
+\contentsline {section}{\numberline {2}Linear Regression}{11}{section.2}%
