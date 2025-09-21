@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex build/main"] 1758047991.25749 "build/main.aux" "build/main.bbl" "build/main" 1758047991.72555 0
+["bibtex build/main"] 1758492946.34769 "build/main.aux" "build/main.bbl" "build/main" 1758492946.87794 0
   "./biblio.bib" 1757869007.01869 189 b8de5a66860dbba87af64e04620c1330 ""
   "/usr/share/texmf-dist/bibtex/bst/ieeetran/IEEEtran.bst" 1755987285 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "build/main.aux" 1758047991.62754 2590 200d3a419dd3b82469e1384364f137b5 "pdflatex"
+  "build/main.aux" 1758492946.77834 3727 a4219b764b78a7aeda0acaa87a679f7f "pdflatex"
   (generated)
   "build/main.bbl"
   "build/main.blg"
   (rewritten before read)
-["pdflatex"] 1758047991.2911 "/home/rafiki/Documents/MATH_412/Rafikis_Notes_MATH412/main.tex" "build/main.pdf" "main" 1758047991.72567 0
+["pdflatex"] 1758492946.38159 "/home/rafiki/Documents/MATH_412/Rafikis_Notes_MATH412/main.tex" "build/main.pdf" "main" 1758492946.87805 0
   "/home/rafiki/.texlive/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk" 1758040081.81762 6964 fab27527bd08e8ddf900f899c58c817f ""
   "/home/rafiki/Documents/MATH_412/Rafikis_Notes_MATH412/main.tex" 1758047990.68811 2785 e4e9c2b94c5344f77b7128c4a827b137 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1755987285 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -62,6 +62,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1755987285 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1755987285 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1755987285 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1755987285 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
   "/usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1755987285 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "/usr/share/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb" 1755987285 17014 61891910dfe21ad76f9789fdafdd860e ""
   "/usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb" 1755987285 16077 4737ac34f0fb5608550f3780a0202c22 ""
@@ -214,13 +215,14 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1755987285 42087 b0f9697c952c8f5a8eede4134282cb0d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1757870295 5311557 9da84c45f5b388655502706482323571 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1757870255 2008254 665957eef637432e26bcf86e3ee5bc70 ""
-  "build/main.aux" 1758047991.62754 2590 200d3a419dd3b82469e1384364f137b5 "pdflatex"
-  "build/main.bbl" 1758047991.28613 1050 2ca4520b0266d0b1a2ccad852834b6e3 "bibtex build/main"
-  "build/main.out" 1758047991.62844 824 eae619c276b321ce44e6fe309d27f2a0 "pdflatex"
-  "build/main.toc" 1758047991.62876 465 4a9cc62da0da569cce5b5b5fe67ed077 "pdflatex"
+  "build/main.aux" 1758492946.77834 3727 a4219b764b78a7aeda0acaa87a679f7f "pdflatex"
+  "build/main.bbl" 1758492946.37634 1050 2ca4520b0266d0b1a2ccad852834b6e3 "bibtex build/main"
+  "build/main.out" 1758492946.77934 824 eae619c276b321ce44e6fe309d27f2a0 "pdflatex"
+  "build/main.toc" 1758492946.77934 465 4a9cc62da0da569cce5b5b5fe67ed077 "pdflatex"
+  "figures/geometry_linearRegression.png" 1758491409.83766 33526 6c05927c5186e4ffb2f715ef4f64e58f ""
   "main.tex" 1758047990.68811 2785 e4e9c2b94c5344f77b7128c4a827b137 ""
   "sections/ex01.tex" 1758047503.86317 7717 1a4ed609003eb7144df9195c62b0f664 ""
-  "sections/linregression.tex" 1758047874.56472 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "sections/linregression.tex" 1758492945.70933 8105 a8c509d821078c3def1284ccd0b4d6c7 ""
   "sections/supervised_basics.tex" 1758045951.39557 10071 8b5a29947fed6a7b4c6f0a5ebe8ea461 ""
   (generated)
   "build/main.aux"

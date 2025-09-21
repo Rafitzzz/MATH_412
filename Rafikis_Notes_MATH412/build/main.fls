@@ -358,6 +358,11 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
 INPUT ./sections/linregression.tex
 INPUT ./sections/linregression.tex
 INPUT sections/linregression.tex
+INPUT ./figures/geometry_linearRegression.png
+INPUT ./figures/geometry_linearRegression.png
+INPUT ./figures/geometry_linearRegression.png
+INPUT ./figures/geometry_linearRegression.png
+INPUT ./figures/geometry_linearRegression.png
 INPUT build/main.bbl
 INPUT build/main.bbl
 INPUT build/main.bbl
@@ -382,5 +387,6 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb
