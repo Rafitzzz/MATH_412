@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.14)  22 SEP 2025 00:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.14)  23 SEP 2025 11:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -709,7 +709,7 @@ l.67 A
        function $f : \mathbb{R}^d \to \mathbb{R}$ is said to be \emph{differ...
 
 [12]
-<figures/geometry_linearRegression.png, id=146, 1320.935pt x 366.36874pt>
+<figures/geometry_linearRegression.png, id=152, 1320.935pt x 366.36874pt>
 File: figures/geometry_linearRegression.png Graphic file (type png)
 <use figures/geometry_linearRegression.png>
 Package pdftex.def Info: figures/geometry_linearRegression.png  used on input line 163.
@@ -718,31 +718,85 @@ Package pdftex.def Info: figures/geometry_linearRegression.png  used on input li
 
 [13]
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 172.
-) (build/main.bbl
 
-[14 <./figures/geometry_linearRegression.png>])
 
-[15] (build/main.aux)
+[14 <./figures/geometry_linearRegression.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{remark.7}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.230 F
+       or fixed $\sigma^2$, minimizing in $\beta$ is equivalent to the
+Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 251.
+
+pdfTeX warning (ext4): destination with the same identifier (name{remark.9}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.263 T
+       hese distributional facts are the foundation for classical inference ...)
+
+[15]
+
+[16] (./sections/over_reg_comple.tex
+<figures/poly_regression_examples.png, id=189, 894.34125pt x 629.35126pt>
+File: figures/poly_regression_examples.png Graphic file (type png)
+<use figures/poly_regression_examples.png>
+Package pdftex.def Info: figures/poly_regression_examples.png  used on input line 33.
+(pdftex.def)             Requested size: 317.9892pt x 223.77177pt.
+<figures/overfitting_training_test.png, id=190, 999.735pt x 759.83875pt>
+File: figures/overfitting_training_test.png Graphic file (type png)
+<use figures/overfitting_training_test.png>
+Package pdftex.def Info: figures/overfitting_training_test.png  used on input line 36.
+(pdftex.def)             Requested size: 317.9892pt x 241.6809pt.
+
+
+[17 <./figures/poly_regression_examples.png>]
+
+[18 <./figures/overfitting_training_test.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{remark.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.99 L
+      et $f:\mathbb{R}^d \to \mathbb{R}$ be differentiable.
+
+[19]
+<figures/poly_ridge_examples.png, id=218, 1075.01625pt x 828.09375pt>
+File: figures/poly_ridge_examples.png Graphic file (type png)
+<use figures/poly_ridge_examples.png>
+Package pdftex.def Info: figures/poly_ridge_examples.png  used on input line 190.
+(pdftex.def)             Requested size: 317.9892pt x 244.9426pt.
+
+
+[20]
+<figures/poly_ridge_err.png, id=228, 584.1825pt x 403.5075pt>
+File: figures/poly_ridge_err.png Graphic file (type png)
+<use figures/poly_ridge_err.png>
+Package pdftex.def Info: figures/poly_ridge_err.png  used on input line 196.
+(pdftex.def)             Requested size: 317.9892pt x 219.64555pt.
+
+
+[21 <./figures/poly_ridge_examples.png> <./figures/poly_ridge_err.png>]) (build/main.bbl)
+
+[22] (build/main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: EAE619C276B321CE44E6FE309D27F2A0;824.
+(rerunfilecheck)             Checksum: C73D63758136C14E7081E915607B5E53;1086.
  ) 
 Here is how much of TeX's memory you used:
- 24991 strings out of 475171
- 476368 string characters out of 5767095
- 862816 words of memory out of 5000000
- 47461 multiletter control sequences out of 15000+600000
+ 25073 strings out of 475171
+ 478378 string characters out of 5767095
+ 862885 words of memory out of 5000000
+ 47506 multiletter control sequences out of 15000+600000
  570280 words of font info for 85 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 98i,10n,101p,595b,594s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/rafiki/.texlive/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on build/main.pdf (15 pages, 284209 bytes).
+ 98i,10n,101p,595b,593s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/rafiki/.texlive/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on build/main.pdf (22 pages, 454388 bytes).
 PDF statistics:
- 280 PDF objects out of 1000 (max. 8388607)
- 217 compressed objects within 3 object streams
- 72 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 360 PDF objects out of 1000 (max. 8388607)
+ 280 compressed objects within 3 object streams
+ 106 named destinations out of 1000 (max. 500000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 

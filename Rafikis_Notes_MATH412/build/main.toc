@@ -4,3 +4,4 @@
 \contentsline {subsubsection}{\numberline {1.1.1}Ordinary Least Squirts Regression (OLS)}{5}{subsubsection.1.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.2}Classification}{6}{subsubsection.1.1.2}%
 \contentsline {section}{\numberline {2}Linear Regression}{11}{section.2}%
+\contentsline {section}{\numberline {3}Overfitting, regularization and complexity}{17}{section.3}%

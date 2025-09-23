@@ -193,3 +193,75 @@ Equivalently:
   \item $M\succ 0$ if and only if all eigenvalues of $M$ are strictly positive.
 \end{itemize}
 \end{remark}
+
+\subsection*{Gaussian conditional model and least squares regression}
+
+We can model the conditional distribution of $Y$ given $X$ as
+\[
+Y \mid X \sim \mathcal{N}(\beta^\top X, \sigma^2).
+\]
+
+\begin{itemize}
+  \item Likelihood for one observation $(x_i,y_i)$:
+  \[
+  p(y_i \mid x_i) = \frac{1}{\sqrt{2\pi\sigma^2}}
+  \exp\!\left(-\frac{1}{2\sigma^2}(y_i - \beta^\top x_i)^2\right).
+  \]
+
+  \item Negative log-likelihood:
+  \[
+  -\ell(\beta,\sigma^2) = 
+  \sum_{i=1}^n -\log p(y_i\mid x_i)
+  = \frac{n}{2}\log(2\pi\sigma^2) 
+  + \frac{1}{2\sigma^2}\sum_{i=1}^n (y_i - \beta^\top x_i)^2.
+  \]
+\end{itemize}
+
+\medskip
+
+\noindent Minimization over both $\beta$ and $\sigma^2$ yields:
+\[
+\min_{\sigma^2,\beta} \; 
+\frac{n}{2}\log(2\pi\sigma^2) 
++ \frac{1}{2\sigma^2}\|y - X\beta\|_2^2.
+\]
+
+\begin{remark}
+For fixed $\sigma^2$, minimizing in $\beta$ is equivalent to the
+usual least squares problem:
+\[
+\min_{\beta} \; \frac{1}{2\sigma^2}\|y - X\beta\|_2^2.
+\]
+Optimizing over $\sigma^2$ gives the maximum-likelihood estimate:
+\[
+\hat\sigma^2_{\mathrm{MLE}} = \frac{1}{n}\sum_{i=1}^n (y_i - \hat\beta^\top_{\mathrm{MLE}} x_i)^2.
+\]
+\end{remark}
+
+\subsection*{Properties if the model is well-specified}
+
+Assume
+\[
+y = X\beta^\ast + \varepsilon,
+\]
+with full column rank design matrix ($\operatorname{rank}(X)=p$,
+thus $n \geq p$) and i.i.d.\ centered Gaussian noise
+$\varepsilon \sim \mathcal{N}(0,\sigma^2 I)$.
+
+\begin{proposition}[Distributional properties]
+  Under these assumptions:
+  \begin{itemize}
+  \item $\hat\beta = (X^\top X)^{-1}X^\top y 
+  \;\sim\; \mathcal{N}\!\big(\beta^\ast,\, \sigma^2 (X^\top X)^{-1}\big)$
+  \item $S^2 = \frac{1}{n-p}\,\|y - \hat y\|_2^2 
+  \;\sim\; \sigma^2 \cdot \frac{1}{n-p}\chi^2_{n-p}$
+  \item $\hat\beta \;\perp\!\!\!\perp\; S^2$
+  \end{itemize}
+\end{proposition}
+
+\begin{remark}
+These distributional facts are the foundation for classical inference tools:
+ANOVA, $t$-tests, and confidence intervals. They are only valid
+if the Gaussian linear model is correctly specified
+(i.e.\ the noise is truly Gaussian and homoscedastic).
+\end{remark}
