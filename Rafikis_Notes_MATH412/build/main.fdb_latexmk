@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex build/main"] 0 "build/main.aux" "build/main.bbl" "build/main" 1758618560.18903 -1
+["bibtex build/main"] 1758618981.53386 "build/main.aux" "build/main.bbl" "build/main" 1758619034.57953 0
   "./biblio.bib" 1757869007.01869 189 b8de5a66860dbba87af64e04620c1330 ""
   "/usr/share/texmf-dist/bibtex/bst/ieeetran/IEEEtran.bst" 1755987285 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "build/main.aux" 1758618560.08969 4986 3d2dd9703623194b1f06b13f6c53169f "pdflatex"
+  "build/main.aux" 1758619034.47915 4986 3d2dd9703623194b1f06b13f6c53169f "pdflatex"
   (generated)
   "build/main.bbl"
   "build/main.blg"
   (rewritten before read)
-["pdflatex"] 1758618559.45404 "/home/rafiki/Documents/MATH_412/Rafikis_Notes_MATH412/main.tex" "build/main.pdf" "main" 1758618560.18914 0
+["pdflatex"] 1758619033.83731 "/home/rafiki/Documents/MATH_412/Rafikis_Notes_MATH412/main.tex" "build/main.pdf" "main" 1758619034.57965 0
   "/home/rafiki/.texlive/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk" 1758040081.81762 6964 fab27527bd08e8ddf900f899c58c817f ""
   "/home/rafiki/Documents/MATH_412/Rafikis_Notes_MATH412/main.tex" 1758612162.2842 2918 3c2d815f07a950cee76c43680907704a ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1755987285 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -216,10 +216,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1755987285 42087 b0f9697c952c8f5a8eede4134282cb0d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1757870295 5311557 9da84c45f5b388655502706482323571 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1757870255 2008254 665957eef637432e26bcf86e3ee5bc70 ""
-  "build/main.aux" 1758618560.08969 4986 3d2dd9703623194b1f06b13f6c53169f "pdflatex"
-  "build/main.bbl" 1758618537.38542 1050 2ca4520b0266d0b1a2ccad852834b6e3 "bibtex build/main"
-  "build/main.out" 1758618560.09069 1086 c73d63758136c14e7081e915607b5e53 "pdflatex"
-  "build/main.toc" 1758618560.09069 564 279bdef3dd6b44a6c8e8d9f1b39e292e "pdflatex"
+  "build/main.aux" 1758619034.47915 4986 3d2dd9703623194b1f06b13f6c53169f "pdflatex"
+  "build/main.bbl" 1758618981.56555 1050 2ca4520b0266d0b1a2ccad852834b6e3 "bibtex build/main"
+  "build/main.out" 1758619034.47915 1086 c73d63758136c14e7081e915607b5e53 "pdflatex"
+  "build/main.toc" 1758619034.48004 564 279bdef3dd6b44a6c8e8d9f1b39e292e "pdflatex"
   "figures/geometry_linearRegression.png" 1758491409.83766 33526 6c05927c5186e4ffb2f715ef4f64e58f ""
   "figures/overfitting_training_test.png" 1758612325.98027 67409 3bdaf5b0fd4da7d4cd5b2ca24855008c ""
   "figures/poly_regression_examples.png" 1758612301.06311 49056 2327a20c2b06aa8881f1b87ec853d86e ""
@@ -228,7 +228,7 @@
   "main.tex" 1758612162.2842 2918 3c2d815f07a950cee76c43680907704a ""
   "sections/ex01.tex" 1758047503.86317 7717 1a4ed609003eb7144df9195c62b0f664 ""
   "sections/linregression.tex" 1758618559.30868 10182 3fdf07a3f04e2fc53b46623e43908eba ""
-  "sections/over_reg_comple.tex" 1758616376.55918 8502 2f3f585ccf83cfab77da1cfc7eb11cf5 ""
+  "sections/over_reg_comple.tex" 1758619033.68914 8502 2f3f585ccf83cfab77da1cfc7eb11cf5 ""
   "sections/supervised_basics.tex" 1758045951.39557 10071 8b5a29947fed6a7b4c6f0a5ebe8ea461 ""
   (generated)
   "build/main.aux"
